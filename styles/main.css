@@ -1,4 +1,48 @@
-.inner-container 
+/* .inner-container 
 {
     width: 80%;
+} */
+.modal-content{
+    background-color: #e8ecef !important;
 }
+
+.cards-container {
+    width: 85%;
+}
+.card-left-side {
+left: 0;
+width: 13%;
+float: left;
+background-color: #e8ecef;
+margin-top: 2%;
+}
+
+.card-right-side {
+    right: 0;
+    width: 7%;
+    float: right;
+}
+
+.container-fluid .card-wrapper {
+    background-color: #e8ecef;
+    height: 70%;
+}
+
+.circle {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: darkcyan;
+    text-align: center;
+    padding-top: 1%;
+    float: right;
+    color: #000000;
+}
+ .coin-value {
+    height: 30px;
+    width: 100px;
+    border-radius: 5%;
+    background-color: #3c1907;
+    color:white;
+    
+ }

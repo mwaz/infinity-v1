@@ -81,7 +81,7 @@
             </button>
             <strong>Hey, </strong> Time remaining to complete this project
             <strong>
-                <script> timer()</script> </strong> 
+                <script> timer()</script> </strong>
         </div>
         <!-- <div> <script>timer()</script></div> -->
         <div class="container-fluid inner-container">
@@ -97,7 +97,7 @@
                         </div>
                         <div class="modal-body ">
                             <h4 class="modal-title text-center" id=coinModalTitle> Add Your Awesome Coin! 😎 </h4>
-                            <form class=".pt-2">
+                            <form class="coin-form pt-1">
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="form-group col-md-10">
@@ -119,7 +119,7 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-outline-success">Add Coin</button>
+                            <button class="btn btn-outline-success" onclick="submit()">Add Coin</button>
                             <button class="btn btn-outline-danger" data-dismiss="modal">Cancel</button>
                         </div>
 
@@ -138,13 +138,14 @@
                 <span class=".sr-only"> &nbsp;</span>
             </div>
             <div class="cards-container">
-                <div class="card border-secondary mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">
-                    <div class="card-body">
+                <div class="card border-info mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">
+                        
+                    <div class="card-body" id="card-body">
                         <img class="card-img-top " width="100%" src="http://www.coinmarketrankings.com/wp-content/uploads/2018/01/finance-3058329_1280-1600x832.jpg"
                             alt="card1 image">
 
-                        <div class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <div class="card-text" id="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Ut enim ad minim veniam,
                         </div>
 
@@ -161,6 +162,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card border-secondary mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">
                     <div class="card-body">
                         <img class="card-img-top " width="100%" src="http://www.coinmarketrankings.com/wp-content/uploads/2018/01/finance-3058329_1280-1600x832.jpg"
@@ -184,7 +186,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card border-secondary mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">
+                <div class="card border-info mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">
                     <div class="card-body">
                         <img class="card-img-top " width="100%" src="http://www.coinmarketrankings.com/wp-content/uploads/2018/01/finance-3058329_1280-1600x832.jpg"
                             alt="card1 image">
@@ -212,5 +214,8 @@
         </div>
     </div>
 </body>
+<script type="text/javascript">
+
+</script>
 
 </html>

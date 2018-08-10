@@ -38,6 +38,7 @@ getCoins = () => {
     const coinList = JSON.parse(sessionStorage.getItem(key));
     coinArray.push(coinList);
   }
+  console.log(coinArray);
   return coinArray;
 };
 

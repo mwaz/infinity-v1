@@ -81,7 +81,7 @@
             </button>
             <strong>Hey, </strong> Time remaining to complete this project
             <strong>
-                <script> timer()</script> </strong>
+                <script> timer(); getCoins()</script> </strong>
         </div>
         <!-- <div> <script>timer()</script></div> -->
         <div class="container-fluid inner-container">

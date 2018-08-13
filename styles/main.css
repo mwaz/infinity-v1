@@ -1,13 +1,10 @@
-/* .inner-container 
-{
-    width: 80%;
-} */
 .modal-content{
     background-color: #e8ecef !important;
 }
 
 .cards-container {
     width: 85%;
+
 }
 .card-left-side {
 left: 0;
@@ -15,17 +12,18 @@ width: 13%;
 float: left;
 background-color: #e8ecef;
 margin-top: 2%;
+height: 150%;
 }
 
 .card-right-side {
     right: 0;
     width: 7%;
     float: right;
+    height: 100%;
 }
 
 .container-fluid .card-wrapper {
     background-color: #e8ecef;
-    height: 100%;
 }
 
 .circle {

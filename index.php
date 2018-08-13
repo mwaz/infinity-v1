@@ -119,7 +119,7 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-outline-success" onclick="submit()">Add Coin</button>
+                            <button class="btn btn-outline-success" onclick="submit()" class="close" data-dismiss="modal">Add Coin</button>
                             <button class="btn btn-outline-danger" data-dismiss="modal">Cancel</button>
                         </div>
 
@@ -130,87 +130,38 @@
         <div class="container-fluid card-wrapper">
             <div class="card-left-side">
                 <span class=".sr-only"> &nbsp;</span>
-
                 <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#coinModal">Add Coin</button>
-
             </div>
+
             <div class="card-right-side">
                 <span class=".sr-only"> &nbsp;</span>
             </div>
             <div class="cards-container">
-                <div class="card border-info mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">
-                        
-                    <div class="card-body" id="card-body">
-                        <img class="card-img-top " width="100%" src="http://www.coinmarketrankings.com/wp-content/uploads/2018/01/finance-3058329_1280-1600x832.jpg"
-                            alt="card1 image">
+                <script>
+                    const coinList = getCoins()
+                    coinList.map(coin => {
+                        write('<div class="card border-info mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">'
+                            + '<div class="card-body">' +
+                            getImage()
+                            + '<div class="card-text">' +
+                            coin.description
+                            + '</div>'
 
-                        <div class="card-text" id="card-text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam,
-                        </div>
-
-                        <div class="circle m-2">
-                            <a href="">
-                                <i class="fab fa-readme" style="color: white; padding: 1.5px"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="card-footer bg-info">
-                        <div class="text-center">
-                            BitCoin : 10000 USD
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card border-secondary mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">
-                    <div class="card-body">
-                        <img class="card-img-top " width="100%" src="http://www.coinmarketrankings.com/wp-content/uploads/2018/01/finance-3058329_1280-1600x832.jpg"
-                            alt="card1 image">
-
-                        <div class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam,
-                        </div>
-
-                        <div class="circle m-2">
-                            <a href="">
-                                <i class="fab fa-readme" style="color: white; padding: 1.5px"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="card-footer bg-secondary">
-                        <div class="text-center">
-                            BitCoin : 10000 USD
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-info mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">
-                    <div class="card-body">
-                        <img class="card-img-top " width="100%" src="http://www.coinmarketrankings.com/wp-content/uploads/2018/01/finance-3058329_1280-1600x832.jpg"
-                            alt="card1 image">
-
-                        <div class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam,
-                        </div>
-
-                        <div class="circle m-2">
-                            <a href="">
-                                <i class="fab fa-readme" style="color: white; padding: 1.5px"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="card-footer bg-info">
-                        <div class="text-center">
-                            BitCoin : 10000 USD
-                        </div>
-                    </div>
-                </div>
+                            + '<div class="circle m-2">'
+                            + '<a href="">'
+                            + '<i class="fab fa-readme" style="color: white; padding: 1.5px"></i>'
+                            + '</a>'
+                            + '</div>'
+                            + '</div>'
+                            + '<div class="card-footer bg-info">'
+                            + ' <div class="text-center">' +
+                            coin.name + ':' + coin.value
+                            + ' </div>'
+                            + '</div>'
+                            + '</div>')
+                    })
+                </script>
             </div>
-
         </div>
     </div>
 </body>

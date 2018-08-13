@@ -82,6 +82,7 @@ submit = () => {
   sessionStorage.setItem(data.name, JSON.stringify(data));
   console.log(data);
   getCoins();
+  location.reload();
 };
 
 populateCard = () => {
@@ -101,3 +102,6 @@ populateCard = () => {
     write(value);
   }
 };
+
+getImage = () =>
+  '<img class="card-img-top " width="100%" src="http://www.coinmarketrankings.com/wp-content/uploads/2018/01/finance-3058329_1280-1600x832.jpg" alt="card1 image">';

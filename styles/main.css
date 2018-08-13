@@ -4,6 +4,7 @@
 
 .cards-container {
     width: 85%;
+    height: 200%;
 
 }
 .card-left-side {
@@ -43,4 +44,10 @@ height: 150%;
     background-color: #3c1907;
     color:white;
     
+ }
+
+.coin-alert {
+     width: 50%;
+     padding: 30px;
+     margin-left: 35%;
  }

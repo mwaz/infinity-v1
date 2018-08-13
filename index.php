@@ -139,6 +139,13 @@
             <div class="cards-container">
                 <script>
                     const coinList = getCoins()
+                    if (coinList.length <= 0) {
+                        write('<div class="alert alert-success coin-alert" role="alert"  style="text-align:center">'
+                            + '<div class="alert-heading"> Howdy! </div>'
+                            + '<p> you have not updated your Coins yet, Mind doing that ? 😉</p>'
+                            + '</div>')
+                            
+                    }
                     coinList.map(coin => {
                         write('<div class="card border-info mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">'
                             + '<div class="card-body">' +
@@ -168,5 +175,6 @@
 <script type="text/javascript">
 
 </script>
+
 
 </html>

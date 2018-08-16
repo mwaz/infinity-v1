@@ -83,9 +83,8 @@
             <strong>
                 <script> timer(); getCoins()</script> </strong>
         </div>
-        <!-- <div> <script>timer()</script></div> -->
         <div class="container-fluid inner-container">
-
+            <!-- Modal for adding  Coin details -->
             <div class="modal fade" id="coinModal" tabindex="-1" role="dialog" aria-labelledby="#coinModalTitle" aria-hidden="True">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -113,7 +112,8 @@
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="form-group col-md-10">
-                                        <textarea id="coinDescription" class="form-control" placeholder="Coin Description"></textarea>
+                                        <textarea id="coinDescription" class="form-control" placeholder="Coin Description (Maximum 140 Characters)" maxlength="140"
+                                            minlength="140"></textarea>
                                     </div>
                                 </div>
                             </form>
@@ -126,17 +126,61 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Modal for editing Coin details -->
+            <div class="modal fade" id="editCoinModal" tabindex="-1" role="dialog" aria-labelledby="#coinModalTitle" aria-hidden="True">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body ">
+                            <h4 class="modal-title text-center" id=coinModalTitle> Edit Your Awesome Coin! 😎 </h4>
+                            <form class="coin-form pt-1">
+                                <script type="text/javascript">
+                                        write ('<div class="row">'
+                                        + ' <div class="col-md-1"></div>' 
+                                        + ' </div>'
+                                        + '<div class="row">'
+                                        + '<div class="col-md-1"></div>'
+                                        + ' <div class="form-group col-md-10">'
+                                        + '<input type="text" id="editCoinValue" class="form-control" placeholder="Coin Value (USD)">'
+                                        + ' </div>'
+                                        + '</div>'
+                                        + '<div class="row">'
+                                        + '<div class="col-md-1"></div>'
+                                        + '<div class="form-group col-md-10">'
+                                        + '<textarea id="editCoinDescription" class="form-control" placeholder="Coin Description (Maximum 140 Characters)" maxlength="140" minlength="140"></textarea>'
+                                        + ' </div>'
+                                        + '</div>');
+
+                                </script>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-outline-success"  class="close" data-dismiss="modal">Edit Coin</button>
+                            <button class="btn btn-outline-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container-fluid card-wrapper">
+            <!-- left hand side extension on the webview -->
             <div class="card-left-side">
                 <span class=".sr-only"> &nbsp;</span>
                 <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#coinModal">Add Coin</button>
             </div>
-
+            <!-- Right hand side extension on the webview -->
             <div class="card-right-side">
                 <span class=".sr-only"> &nbsp;</span>
             </div>
             <div class="cards-container">
+                <!-- Individual Cards loop using javascript -->
                 <script>
                     const coinList = getCoins()
                     if (coinList.length <= 0) {
@@ -144,10 +188,10 @@
                             + '<div class="alert-heading"> Howdy! </div>'
                             + '<p> you have not updated your Coins yet, Mind doing that ? 😉</p>'
                             + '</div>')
-                            
+
                     }
                     coinList.map(coin => {
-                        write('<div class="card border-info mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;">'
+                        write('<div class="card border-info mt-3 mb-3 ml-2 d-inline-block" style="width: 20rem; max-width: 20rem;" id='+ coin.name + '>'
                             + '<div class="card-body">' +
                             getImage()
                             + '<div class="card-text">' +
@@ -159,6 +203,16 @@
                             + '<i class="fab fa-readme" style="color: white; padding: 1.5px"></i>'
                             + '</a>'
                             + '</div>'
+                            + '<div class="circle m-2" style="background-color:#12b886 !important;">'
+                            + '<a href="#" onclick="editCoin(this.id)" id='+`'${coin.name }'`+'> '
+                            + '<i class="fas fa-edit" id='+`'${coin.name }'`+' data-coins='+`'${coin.name }'`+' style="color: white; padding: 1.5px"></i>'
+                            + '</a>'
+                            + '</div>'
+                            + '<div class="circle m-2" style="background-color:#d6336c !important;">'
+                            + '<a href="#" onClick="deleteCoin(' + `'${coin.name }'` + ')"> '
+                            + '<i class="fas fa-trash-alt" style="color: white; padding: 1.5px"></i>'
+                            + '</a>'
+                            + '</div>'
                             + '</div>'
                             + '<div class="card-footer bg-info">'
                             + ' <div class="text-center">' +
@@ -166,15 +220,14 @@
                             + ' </div>'
                             + '</div>'
                             + '</div>')
+
+                        
+
                     })
                 </script>
             </div>
         </div>
     </div>
 </body>
-<script type="text/javascript">
-
-</script>
-
 
 </html>

@@ -78,11 +78,10 @@ submit = () => {
   };
 
   addCoin(coinList, data);
-
   sessionStorage.setItem(data.name, JSON.stringify(data));
-  console.log(data);
   getCoins();
   location.reload();
+  console.log(data);
 };
 
 populateCard = () => {
@@ -105,3 +104,53 @@ populateCard = () => {
 
 getImage = () =>
   '<img class="card-img-top " width="100%" src="http://www.coinmarketrankings.com/wp-content/uploads/2018/01/finance-3058329_1280-1600x832.jpg" alt="card1 image">';
+
+deleteCoin = key => {
+  if (key === null) {
+    console.log("key is null");
+    alert(`Cannot delete ${key} coin`);
+  }
+
+  if (confirm(`Are you sure you want to delete ${key}? `)) {
+    sessionStorage.removeItem(key);
+    forceReload();
+  }
+};
+
+editCoin = (...key) => {
+  $("#editCoinModal").modal();
+  let coinValue = document.getElementById("editCoinValue").value;
+  let coinDescription = document.getElementById("editCoinDescription").value;
+
+  let data = {
+    name: key[0],
+    value: coinValue,
+    description: coinDescription
+  };
+
+  errors = {};
+
+  if (!data.name) {
+    errors.coinName = "Coin name not provided";
+  }
+  if (!data.value) {
+    errors.coinValue = "Coin value not provided";
+  }
+  if (!data.description) {
+    errors.coinDescription = "Coin description not provided";
+  }
+
+  sessionStorage.setItem(data.name, JSON.stringify(data));
+
+  if (errors.length <= 0) {
+    forceReload();
+  }
+  console.log(errors, "these are errors");
+  // saveCoin();
+
+  console.log(data.name, "key");
+};
+
+forceReload = () => {
+  window.location.reload(true);
+};
